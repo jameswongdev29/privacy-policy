@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Privacy Policy - Wavelet</title>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p><strong>Effective Date:</strong> April 27, 2026</p>
+
+<p>Wavelet ("the App") is an iOS app developed by Canguang Wang ("we", "us") that shows your device's live network state — upload and download speed, network type, and cumulative data usage — together with a Home Screen and Lock Screen widget. We respect your privacy. This policy explains what data the App does and does not handle.</p>
+
+<h2>Data We Collect</h2>
+<p><strong>None.</strong> The App does not collect, transmit, store on our servers, or share any personal information or usage data. The App does not require an account, does not connect to any analytics service, does not perform crash reporting, and does not include any third-party SDKs. Wavelet makes <strong>zero network connections of its own</strong>.</p>
+
+<h2>How Wavelet Reads Network Information</h2>
+<p>To display speed and usage, the App reads the operating system's per-interface byte counters (via the standard <code>getifaddrs</code> system call) and the current network path type (Wi-Fi, cellular, or wired) via Apple's <code>NWPathMonitor</code> API. These reads happen entirely on your device. The numbers shown — bytes sent, bytes received, network type — are produced locally and never leave the device.</p>
+
+<h2>Local Network Permission</h2>
+<p>iOS may prompt you for the "Local Network" permission the first time the App starts. This permission is required by the system before any app can observe local network state on iOS, even passively. Wavelet does <strong>not</strong> scan, discover, or contact any device on your local network. If you deny the prompt, the App still works.</p>
+
+<h2>On-Device Storage</h2>
+<p>The App stores the following on your device only, inside the app's shared App Group container (<code>group.com.cgwang.wavelet</code>):</p>
+<ul>
+  <li>Per-minute usage samples (bytes sent / received per network type), used to render the Usage chart.</li>
+  <li>Your preferences (theme, units, monthly quota, widget settings).</li>
+  <li>The most recent speed snapshot, so the Widget can render the latest reading without launching the App.</li>
+</ul>
+<p>This data lives on your device. It is removed when you delete the App. We have no access to it.</p>
+
+<h2>iCloud Sync</h2>
+<p>Wavelet does <strong>not</strong> use iCloud. Nothing syncs across devices. Each device keeps its own local history.</p>
+
+<h2>Widget Extension</h2>
+<p>The Widget reads the same on-device snapshot the App writes. It does not perform any network requests of its own and does not transmit anything off the device.</p>
+
+<h2>Children</h2>
+<p>The App does not knowingly collect any information from children or any other users.</p>
+
+<h2>Changes</h2>
+<p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support.jamesstudio@gmail.com">support.jamesstudio@gmail.com</a>. For general help and FAQs, see our <a href="support.html">Support page</a>.</p>
+</body>
+</html>
