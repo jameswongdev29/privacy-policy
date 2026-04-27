@@ -12,11 +12,13 @@
 
 <h2>Your Data Stays on Your Device</h2>
 
-<p>Wavelet makes <strong>zero network connections</strong>. No analytics, no crash reporting, no update checks, no third-party SDKs, no server of any kind. The app and the widget run 100% on-device.</p>
+<p>Wavelet does <strong>not initiate any network connections on its own</strong>. No analytics, no crash reporting, no update checks, no third-party SDKs, no server of any kind.</p>
+
+<p>The one exception is the <strong>Public IP card</strong>, which is off by default. If you turn it on in Settings, the app makes one HTTPS request to <a href="https://ipinfo.io">ipinfo.io</a> to look up your device's public IP and approximate location, caches the result for 30 minutes, and that's it. No other feature contacts the network. If you don't enable the Public IP card, the app and the widget run 100% on-device.</p>
 
 <p>The only data Wavelet stores is what your device produces: per-minute usage samples derived from the operating system's byte counters, your preferences (theme, units, monthly quota, widget settings), and the most recent speed snapshot for the widget. It lives in the shared App Group on your device. We cannot see any of it.</p>
 
-<p>If you're used to other "speed test" or "data usage" apps that phone home, you can verify our claim yourself: run Wavelet with Little Snitch, Charles, Proxyman, or any network monitor filtered to our bundle IDs (<code>com.cgwang.wavelet</code> / <code>com.cgwang.wavelet.widget</code>). You'll see nothing.</p>
+<p>If you're used to other "speed test" or "data usage" apps that phone home, you can verify our claim yourself: run Wavelet with Little Snitch, Charles, Proxyman, or any network monitor filtered to our bundle IDs (<code>com.cgwang.wavelet</code> / <code>com.cgwang.wavelet.widget</code>). With the Public IP card off, you'll see no traffic. With it on, you'll see exactly one request per refresh, to <code>ipinfo.io</code>.</p>
 
 <p>For the full statement, see our <a href="index.html">Privacy Policy</a>.</p>
 
@@ -54,11 +56,14 @@
 <h3>Does Wavelet work in the background?</h3>
 <p>iOS does not allow third-party apps to continuously sample network counters in the background. Wavelet samples while it is running in the foreground and while the widget timeline updates. Long periods with the app closed will leave gaps in the per-minute history.</p>
 
+<h3>What does the Public IP card do, and is it safe?</h3>
+<p>The Public IP card is the only feature in Wavelet that contacts the internet. It's off by default. When you turn it on in Settings, the app sends one HTTPS request to <a href="https://ipinfo.io">ipinfo.io</a> to look up your device's public IP, ISP, and approximate location, then caches that for 30 minutes. It does not send anything else, and it does not run in the background. Turning the card off stops all requests immediately.</p>
+
 <h3>Why is the Wi-Fi name not shown?</h3>
 <p>Showing the Wi-Fi SSID requires both a special Apple entitlement and the user granting "Location When In Use" permission. We chose not to request either, because Wavelet does not need them to show speed and usage.</p>
 
 <h3>Does Wavelet share my data with anyone?</h3>
-<p>No. Wavelet does not collect, transmit, or store any personal information or usage data off the device. Everything runs on-device. See the <a href="index.html">Privacy Policy</a> for the full statement.</p>
+<p>No. Wavelet does not collect, transmit, or store any personal information or usage data off the device. The Public IP feature, if you enable it, sends a request to ipinfo.io to look up your IP — see the <a href="index.html">Privacy Policy</a> for the full statement.</p>
 
 <h3>How do I reset the usage history?</h3>
 <p>Open the Wavelet app and use the reset option in <strong>Settings</strong>. Deleting the app also removes all stored data.</p>

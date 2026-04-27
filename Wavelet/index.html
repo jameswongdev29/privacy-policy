@@ -11,7 +11,20 @@
 <p>Wavelet ("the App") is an iOS app developed by Canguang Wang ("we", "us") that shows your device's live network state — upload and download speed, network type, and cumulative data usage — together with a Home Screen and Lock Screen widget. We respect your privacy. This policy explains what data the App does and does not handle.</p>
 
 <h2>Data We Collect</h2>
-<p><strong>None.</strong> The App does not collect, transmit, store on our servers, or share any personal information or usage data. The App does not require an account, does not connect to any analytics service, does not perform crash reporting, and does not include any third-party SDKs. Wavelet makes <strong>zero network connections of its own</strong>.</p>
+<p><strong>None.</strong> The App does not collect, transmit, store on our servers, or share any personal information or usage data. The App does not require an account, does not connect to any analytics service, does not perform crash reporting, and does not include any third-party SDKs.</p>
+
+<h2>Our Network Promise</h2>
+<p>Wavelet does <strong>not initiate any network connections on its own</strong>. There is no telemetry, no auto-update check, no background sync, no analytics ping. The only outbound network request the App will ever make is one you turn on yourself — see the next section.</p>
+
+<h2>Optional Features That Use the Network</h2>
+<p>Some features only work if the device contacts a third-party service. These are <strong>off by default</strong> and only run after you explicitly enable them. The App will never silently turn one on.</p>
+<p>The complete list:</p>
+<ul>
+  <li>
+    <strong>Public IP card</strong> — when you enable this in Settings, the App makes a single HTTPS request to <a href="https://ipinfo.io">ipinfo.io</a> to look up your device's public IP address, ISP, and approximate location. The result is cached on your device for 30 minutes. The IP address that's revealed in the request is the one being looked up — that is the feature. <a href="https://ipinfo.io/privacy-policy">ipinfo.io's privacy policy</a> applies to that request. If you turn the card off, no further requests are made.
+  </li>
+</ul>
+<p>If we ever add another optional feature that uses the network, it will appear in this list and will follow the same rule: off by default, named in Settings, no silent activation.</p>
 
 <h2>How Wavelet Reads Network Information</h2>
 <p>To display speed and usage, the App reads the operating system's per-interface byte counters (via the standard <code>getifaddrs</code> system call) and the current network path type (Wi-Fi, cellular, or wired) via Apple's <code>NWPathMonitor</code> API. These reads happen entirely on your device. The numbers shown — bytes sent, bytes received, network type — are produced locally and never leave the device.</p>
@@ -25,6 +38,7 @@
   <li>Per-minute usage samples (bytes sent / received per network type), used to render the Usage chart.</li>
   <li>Your preferences (theme, units, monthly quota, widget settings).</li>
   <li>The most recent speed snapshot, so the Widget can render the latest reading without launching the App.</li>
+  <li>If you have enabled the Public IP card, the most recently fetched IP / ISP / location, cached for 30 minutes.</li>
 </ul>
 <p>This data lives on your device. It is removed when you delete the App. We have no access to it.</p>
 
