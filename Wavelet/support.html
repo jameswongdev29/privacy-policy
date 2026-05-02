@@ -6,17 +6,15 @@
 </head>
 <body>
 <h1>Wavelet Support</h1>
-<p><strong>Last Updated:</strong> April 28, 2026</p>
+<p><strong>Last Updated:</strong> May 2, 2026</p>
 
-<p>Wavelet is an app that shows your device's live network speed, network type, and cumulative data usage, with a Home Screen and Lock Screen widget. This page covers how to get it working and how to reach us.</p>
+<p>Wavelet is an iOS app that shows your device's live network speed, network type, and cumulative data usage, with Home Screen, Lock Screen, and Control Center widgets. This page covers how to get it working and how to reach us.</p>
 
 <h2>Your Data Stays on Your Device</h2>
 
-<p>Wavelet makes <strong>zero outbound network connections</strong>. No analytics, no crash reporting, no update checks, no IP lookups, no third-party SDKs, no server of any kind. The app and the widget run 100% on-device.</p>
+<p>Wavelet makes <strong>no outbound network connections</strong>. No analytics, no third-party SDKs, no server of any kind. The app and the widget run entirely on-device.</p>
 
-<p>The only data Wavelet stores is what your device produces: per-minute usage samples derived from the operating system's byte counters, your preferences (theme, units, monthly quota, widget settings), and the most recent speed snapshot for the widget. It lives in the shared App Group on your device. We cannot see any of it.</p>
-
-<p>If you're used to other "speed test" or "data usage" apps that phone home, you can verify our claim yourself: run Wavelet with Little Snitch, Charles, Proxyman, or any network monitor filtered to our bundle IDs (<code>com.cgwang.wavelet</code> / <code>com.cgwang.wavelet.widget</code>). You'll see nothing.</p>
+<p>The only data Wavelet stores is what your device produces: per-minute usage samples derived from the operating system's byte counters, your preferences (theme, units, monthly quota, widget settings), and the most recent speed snapshot for the widget. It lives in the app's sandboxed container on your device. We have no access to it.</p>
 
 <p>For the full statement, see our <a href="index.html">Privacy Policy</a>.</p>
 
@@ -43,22 +41,19 @@
 <h2>Frequently Asked Questions</h2>
 
 <h3>The widget shows old numbers.</h3>
-<p>The System controls how often widgets refresh — it is not something an app can force. Wavelet writes a fresh snapshot whenever it is open in the foreground, and the system updates the widget on its own schedule (typically every few minutes). Opening the app once will refresh the widget immediately.</p>
+<p>Widgets refresh on a system-managed schedule, typically every few minutes. Wavelet writes a fresh snapshot whenever it is open in the foreground. Opening the app will refresh the widget immediately.</p>
 
 <h3>Why is my upload / download speed always zero?</h3>
-<p>Speed is measured by sampling the system's per-interface byte counters once per second. If your device isn't actively sending or receiving traffic, the speed is genuinely zero. Try loading a webpage or starting a download to see the readout move.</p>
+<p>Speed is measured by sampling the device's byte counters once per second. If your device isn't actively sending or receiving traffic, the speed is genuinely zero. Try loading a webpage or starting a download to see the readout move.</p>
 
 <h3>The cellular usage doesn't match what my carrier shows.</h3>
-<p>Wavelet counts bytes that pass through the cellular interface from the moment the app first runs. Your carrier counts bytes on their network and may include or exclude things differently (e.g. zero-rated apps, carrier services, billing-cycle alignment). The two numbers will not match exactly. Treat Wavelet's number as a personal reference, not a billing source of truth.</p>
+<p>Wavelet counts bytes that pass through the cellular interface from the moment the app first runs. Your carrier counts bytes on their network and may include or exclude things differently (e.g. zero-rated services, billing-cycle alignment). The two numbers will not match exactly. Treat Wavelet's number as a personal reference, not a billing source of truth.</p>
 
 <h3>Does Wavelet work in the background?</h3>
-<p>The System does not allow third-party apps to continuously sample network counters in the background. Wavelet samples while it is running in the foreground and while the widget timeline updates. Long periods with the app closed will leave gaps in the per-minute history.</p>
-
-<h3>How do I see my public IP?</h3>
-<p>Settings has a "View Public IP in Safari" link that opens <a href="https://ipinfo.io">ipinfo.io</a> in your browser. Safari makes the request, not Wavelet — that's why our claim of zero outbound connections still holds.</p>
+<p>Wavelet samples while it is running in the foreground. When the app is not in the foreground, sampling pauses, so long periods with the app closed will leave gaps in the per-minute history.</p>
 
 <h3>Why is the Wi-Fi name not shown?</h3>
-<p>Showing the Wi-Fi SSID requires both a special Apple entitlement and the user granting "Location When In Use" permission. We chose not to request either, because Wavelet does not need them to show speed and usage.</p>
+<p>Displaying the Wi-Fi network name requires Location permission. We chose not to request it, since Wavelet does not need location data to show speed and usage.</p>
 
 <h3>Does Wavelet share my data with anyone?</h3>
 <p>No. Wavelet does not collect, transmit, or store any personal information or usage data off the device. See the <a href="index.html">Privacy Policy</a> for the full statement.</p>
