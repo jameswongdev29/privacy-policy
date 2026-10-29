@@ -2,15 +2,17 @@
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Token Monitor Privacy Policy</title>
 <style>body{max-width:780px;margin:48px auto;padding:0 24px;font:16px/1.7 system-ui;color:#29241f;background:#faf8f3}a{color:#a4533d}h1,h2{line-height:1.3}section{margin-bottom:36px}</style>
 <h1>Token Monitor Privacy Policy</h1>
-<p>Effective October 10, 2026. Developer: Weidi Huang. Applies to Token Monitor for macOS.</p>
+<p>Effective October 29, 2026. Developer: Weidi Huang. Applies to Token Monitor for macOS.</p>
 <section lang="en">
 <h2>Local data processing</h2>
 <p>Token Monitor reads Codex and Claude Code usage logs in directories you select. Log files may contain conversation text, tool output and account identifiers; the app parses these files locally to extract token counts, model names, event times, session identifiers and quota snapshots. It does not upload logs, conversations or credentials to the developer or a third-party AI service. We operate no app server and include no advertising, analytics or third-party SDK.</p>
+<h2>Sample data demonstration</h2>
+<p>Explore sample data is available without connecting a source, in Settings and on the expired-trial page. It generates fictitious logs and nonfunctional sample accounts in a separate temporary app-owned directory, with separate preferences and memory-only credential storage. Sample data is not combined with your usage and cannot authenticate to any service. Demo actions do not access your real directories or Keychain, reset the trial, or grant a purchase. Exit demo discards the demo workspace; an app crash may leave temporary sample files for macOS to clean up. CSV exports you choose to save remain in the selected location.</p>
 <h2>Accounts and directory access</h2>
 <p>Codex account management reads login information, which may contain an email address, account identifiers, API keys and access or refresh tokens. Accounts you save or import and the backup for the latest switch are stored in the macOS Keychain. Account labels and identifiers, directory paths and switch recovery metadata are stored locally. Switching or undoing a switch changes auth.json in the Codex directory you selected, after your confirmation. The app does not sign you into a website or modify browser cookies. Claude credentials are not read or copied.</p>
 <p>The Mac App Store build uses the macOS App Sandbox. System file pickers grant access to selected directories and files. Directory bookmarks are stored locally so access can resume after restarting. You may revoke directory access in Settings. Usage logs are read-only; Codex directory write access is used for confirmed account switching.</p>
 <h2>Retention and deletion</h2>
-<p>Preferences and directory records remain locally until you remove them or reset the app. Removing a saved account deletes its saved Keychain entry, but does not sign out Codex or delete the latest switch backup. Usage statistics are also saved in the app container so they remain available when you resume using the app after purchasing a lifetime license. Trial expiration blocks use of the whole app and does not delete the snapshot. This snapshot excludes account identifiers, quotas, credentials and conversation content; session identifiers are hashed. Revoking a source directory clears its source's saved statistics. Exported CSV files remain wherever you save them and can be deleted using Finder. Removing the app may leave its container data and Keychain entries. To remove all data, delete the app's local container data and its Keychain entries under com.cgwang.AIMonitor.credentials, including switch backups, and the trial timing record under com.cgwang.AIMonitor.license. This does not remove Codex or Claude Code's own logs and login files.</p>
+<p>Preferences and directory records remain locally until you remove them or reset the app. Removing a saved account deletes its saved Keychain entry, but does not sign out Codex or delete the latest switch backup. Usage statistics are also saved in the app container so they remain available when you resume using the app after purchasing a lifetime license. Trial expiration blocks use with your own data without deleting the snapshot. The isolated sample demo remains available. This snapshot excludes account identifiers, quotas, credentials and conversation content; session identifiers are hashed. Revoking a source directory clears its source's saved statistics. Exported CSV files remain wherever you save them and can be deleted using Finder. Removing the app may leave its container data and Keychain entries. To remove all data, delete the app's local container data and its Keychain entries under com.cgwang.AIMonitor.credentials, including switch backups, and the trial timing record under com.cgwang.AIMonitor.license. This does not remove Codex or Claude Code's own logs and login files.</p>
 <h2>Purchases and support</h2>
 <p>In this candidate Mac App Store release, a full seven-day trial starts automatically at first use. Its start date and latest observed time stay in a separate local Keychain license record; reinstalling or restoring purchases does not restart an existing record. Verified earlier trial transactions are honored. Lifetime purchases are processed by Apple through StoreKit and verified locally; the developer does not receive payment card details. Apple handles App Store transactions under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Support messages are sent only when you choose to send them using your mail app. Do not send login files, tokens or private conversations.</p>
 <h2>Contact and changes</h2>
@@ -18,14 +20,16 @@
 </section>
 <section lang="zh-Hans">
 <h1>Token Monitor 隐私政策</h1>
-<p>生效日期：2026 年 10 月 10 日。开发者：Weidi Huang。</p>
+<p>生效日期：2026 年 10 月 29 日。开发者：Weidi Huang。</p>
 <h2>本地处理</h2>
 <p>应用读取你选择的 Codex 与 Claude Code 用量日志。原始日志可能含对话、工具输出和账号标识；应用仅在本机解析 Token 计数、模型、时间、会话标识和额度快照，不向开发者或第三方 AI 服务上传日志、对话或凭据。应用没有自建服务器、广告、分析或第三方 SDK。</p>
+<h2>示例数据演示</h2>
+<p>未连接来源时、设置中及试用到期页面均可查看示例数据。演示在独立的应用临时目录生成虚构日志和无法登录服务的示例账号，使用独立偏好及仅存于内存的凭据存储。示例数据不与真实用量合并，演示操作不访问真实数据目录或钥匙串，不重置试用或授予购买。退出演示会丢弃演示工作区；应用意外退出可能留下等待 macOS 清理的临时示例文件。自行导出的 CSV 保留在你选择的位置。</p>
 <h2>账号与目录权限</h2>
 <p>Codex 账号管理会读取可能含邮箱、账号标识、API Key、访问和刷新 Token 的登录文件。保存或导入的凭据及最近切换的备份存入 macOS 钥匙串；账号名称、标识、目录路径和恢复元信息保存在本机。切换和撤销操作经你确认后修改所选 Codex 目录的 auth.json，不改写浏览器 Cookie。应用不读取或复制 Claude 登录凭据。</p>
 <p>Mac App Store 版本启用沙盒，通过系统文件窗口获得所选目录和文件权限，并在本机保存目录授权书签以供重启后使用。设置中可撤销目录授权。日志只读；Codex 目录写权限用于确认后的账号切换。</p>
 <h2>保留与删除</h2>
-<p>偏好和目录记录在移除或重置前保留在本机。移除已保存账号会删除其钥匙串条目，但不会登出 Codex 或删除最近切换的恢复备份。用量统计也保存在应用容器中，购买永久使用权后可继续使用；试用到期会暂停整款应用的使用，不会删除统计快照。该快照不含账号标识、额度、凭据或对话内容，会话标识以哈希保存。撤销来源目录授权会清除该来源的已保存统计；CSV 保留在你选择的位置，可在 Finder 删除。卸载应用可能保留容器数据和钥匙串条目；完全清除时需删除本应用的本地容器数据，并在钥匙串中清除 com.cgwang.AIMonitor.credentials 下的条目，包括切换备份，以及 com.cgwang.AIMonitor.license 下的试用时间记录。不会删除 Codex 或 Claude 自身的日志和登录文件。</p>
+<p>偏好和目录记录在移除或重置前保留在本机。移除已保存账号会删除其钥匙串条目，但不会登出 Codex 或删除最近切换的恢复备份。用量统计也保存在应用容器中，购买永久使用权后可继续使用；试用到期会暂停真实数据的整款应用使用，仍可查看隔离的示例演示，不会删除统计快照。该快照不含账号标识、额度、凭据或对话内容，会话标识以哈希保存。撤销来源目录授权会清除该来源的已保存统计；CSV 保留在你选择的位置，可在 Finder 删除。卸载应用可能保留容器数据和钥匙串条目；完全清除时需删除本应用的本地容器数据，并在钥匙串中清除 com.cgwang.AIMonitor.credentials 下的条目，包括切换备份，以及 com.cgwang.AIMonitor.license 下的试用时间记录。不会删除 Codex 或 Claude 自身的日志和登录文件。</p>
 <h2>购买与支持</h2>
 <p>本次 Mac App Store 候选版本在首次启动时自动开始 7 天完整试用，开始时间及最近观察时间存入独立的本地钥匙串授权记录；已有记录不会因重装或恢复购买而重置，也会保留已验证的更早试用交易。永久购买由 Apple StoreKit 处理，应用在本机验证交易以判断使用权限，开发者不会获得银行卡信息。Apple 按其隐私政策处理交易。支持邮件仅在你自行发送时送出；请勿发送登录文件、Token 或私人对话。</p>
 <p>联系：<a href="mailto:support.jamesstudio@gmail.com">support.jamesstudio@gmail.com</a>。政策更新会注明新日期。</p>
