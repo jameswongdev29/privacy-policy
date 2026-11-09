@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Privacy Policy - SleepWave</title>
-</head>
-<body>
-<h1>Privacy Policy</h1>
-<p><strong>Effective Date:</strong> May 17, 2026</p>
-
-<p>SleepWave ("the App") is an iOS app that generates ambient sounds and sleep/focus timers to help you relax, sleep, and concentrate. We respect your privacy. This policy explains what data the App does and does not handle.</p>
-
-<h2>Data We Collect</h2>
-<p><strong>None.</strong> The App does not collect, transmit, store on our servers, or share any personal information or usage data. The App does not require an account, does not connect to any analytics service, and does not include any third-party SDKs.</p>
-
-<h2>Network Connections</h2>
-<p>SleepWave makes <strong>no outbound network connections</strong>. All sounds are generated procedurally on your device in real time — no audio is streamed or downloaded. No telemetry, no auto-update checks, no background sync, no analytics, no remote config.</p>
-
-<h2>On-Device Storage</h2>
-<p>The App stores the following on your device only, inside the app's shared App Group container:</p>
-<ul>
-  <li>Your saved sound mixes (favorites) — which sounds and volume levels you have saved.</li>
-  <li>Your preferences (timer settings, focus timer configuration).</li>
-  <li>A snapshot of your last-used mix, so the Widget can display it without launching the App.</li>
-</ul>
-<p>This data lives on your device. It is removed when you delete the App. We have no access to it.</p>
-
-<h2>Audio Generation</h2>
-<p>All ambient sounds are synthesised in real time using DSP algorithms running entirely on your device. No audio files are downloaded, streamed, or sent anywhere. The App uses Apple's AVAudioEngine framework to render audio locally.</p>
-
-<h2>Background Audio</h2>
-<p>The App uses the system Background Audio capability so that sound playback continues when the screen is locked or the App is in the background. This does not involve any network activity.</p>
-
-<h2>Widget Extension</h2>
-<p>The Widget reads saved mix data from the shared App Group container. It does not perform any network requests and does not transmit anything off the device.</p>
-
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy Policy - SleepWave</title></head><body>
+<h1>SleepWave Privacy Policy</h1>
+<p><em>Last updated: 2026-11-09</em></p>
+<p>SleepWave is developed by James Huang Studio, an independent developer. This policy explains the information handled by the app, including optional syncing through your own Apple iCloud account.</p>
+<h2>Developer data collection</h2>
+<p>We do not operate a developer backend for SleepWave. The app contains no advertising, tracking, or third-party analytics SDKs. We do not collect or sell your sound mixes, imported recordings, playback history, or other personal information on developer-operated servers. SleepWave does not require a separate developer account or login.</p>
+<p>Apple provides App Store purchases and optional iCloud services. Those services involve connections to Apple and are subject to Apple&#x27;s privacy policies. Local playback does not require an internet connection once the selected audio is available on the device.</p>
+<h2>Information stored by the app</h2>
+<table><thead><tr><th>Information</th><th>Storage and purpose</th></tr></thead><tbody>
+<tr><td>Saved sound mixes, volume levels and sound variants</td><td>App Group UserDefaults allows the app and its Home Screen widget to share favorites. When iCloud is available, favorites also sync through your own iCloud key-value store.</td></tr>
+<tr><td>Imported custom audio and its metadata</td><td>Stored in your own iCloud Drive container, iCloud.com.jameshuangstudio.sleepwave, when available, with a local Documents/CustomSounds fallback. iCloud syncing can transfer these files and their names between your devices.</td></tr>
+<tr><td>Playback-session summaries</td><td>Stored in app-local UserDefaults for Sleep Insights. These summarize audio playback, not measured sleep stages or medical data.</td></tr>
+<tr><td>Last playback selection</td><td>Stored in app-local UserDefaults, including sound choices, volume levels and applicable timer configuration, to let you choose to continue a previous mix. The app does not automatically start that mix on cold launch.</td></tr>
+<tr><td>Timer, wake-up, language, appearance and sound preferences</td><td>Stored locally to remember your settings.</td></tr>
+<tr><td>Three-day trial start</td><td>Stored in this device&#x27;s Keychain to determine trial availability. The trial record may remain after reinstalling the app.</td></tr>
+<tr><td>Purchase entitlement</td><td>The app asks Apple&#x27;s StoreKit to verify lifetime access and to purchase or restore that access. Apple manages the signed transaction records and their local cache.</td></tr>
+</tbody></table>
+<p>Imported audio remains under your Apple account&#x27;s storage and sharing settings when iCloud is used. We do not receive the contents of your iCloud files. Availability and syncing depend on your device, Apple account, iCloud settings and network connection.</p>
+<h2>Purchases and restoration</h2>
+<p>The app offers a three-day full-feature trial and an optional one-time lifetime unlock. StoreKit displays the price for your storefront. Apple processes the purchase, payment and restore requests; the app does not receive your payment-card details. Restoring purchases requires communication with Apple and may require Apple Account authentication.</p>
+<h2>Audio, notifications and permissions</h2>
+<p>SleepWave uses background audio so selected sounds can continue when the screen is locked. If you enable Smart Wake, the app can request notification permission and schedule local wake-up notifications. It does not register for remote push notifications.</p>
+<p>The app does not access HealthKit, record your microphone, or request camera or location access. Sleep Insights is a playback log and does not diagnose, monitor or treat a medical condition.</p>
+<h2>Managing your information</h2>
+<p>You can remove favorites and custom sounds in the app. Removing custom files or changing iCloud settings can affect their availability on your other devices. You can manage iCloud storage and notification permissions in the device&#x27;s Settings. Apple Account purchases and Apple-held data are managed through Apple.</p>
 <h2>Children</h2>
-<p>The App does not knowingly collect any information from children or any other users.</p>
-
-<h2>Changes</h2>
-<p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
-
-<h2>Contact</h2>
-<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support.jamesstudio@gmail.com">support.jamesstudio@gmail.com</a>.</p>
-</body>
-</html>
+<p>SleepWave has no advertising or developer-operated personal-data collection and is not specifically directed at children under 13.</p>
+<h2>Changes and contact</h2>
+<p>Updates to this policy will be published at the app&#x27;s privacy-policy URL.</p>
+<p>Questions or requests: <strong>support.jamesstudio@gmail.com</strong></p>
+</body></html>
